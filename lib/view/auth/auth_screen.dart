@@ -15,7 +15,10 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Amazon Clone"),
+        title: Text(
+          "Amazon Clone",
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
         elevation: 0.0,
         automaticallyImplyLeading: true,
@@ -26,10 +29,13 @@ class _AuthScreenState extends State<AuthScreen> {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                // SizedBox(height: 10,),
+                SizedBox(height: 10,),
                 Text(
                   "Sign in with your email and password",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                ),
+                 SizedBox(
+                  height: 40,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -53,6 +59,8 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
                 TextField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
                       ),
@@ -62,6 +70,8 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
                 TextField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
                       ),
@@ -80,18 +90,62 @@ class _AuthScreenState extends State<AuthScreen> {
                   title: Text("Keep me signed in"),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/2-40 , vertical: 10),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width / 2 - 40,
+                      vertical: 10),
                   decoration: BoxDecoration(
-                  color: Colors.amber,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black26,
+                        blurRadius: 4,
+                        offset: Offset(2, 1),
+                      ),
+                    ],
+                    color: Colors.amber,
+                  ),
+                  child: Text(
+                    "Sign In",
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                  ),
                 ),
-                child: Text("Sign In"),
+                SizedBox(
+                  height: 40,
                 ),
-                ElevatedButton(onPressed: () {}, child: Text("Sign In")),
-                Divider(),
-                Text("New To Amazon"),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Divider(
+                        color: Colors.black,
+                        endIndent: 10,
+                        thickness: 0.1,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Text(
+                        "New To Amazon",
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        color: Colors.black,
+                        indent: 10,
+                        thickness: 0.1,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
                 ElevatedButton(
                   onPressed: () {},
-                  child: Text("Create A New Amazon Account"),
+                  child: Text(
+                    "Create A New Amazon Account",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
               ],
             ),
